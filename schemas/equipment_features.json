@@ -1,0 +1,86 @@
+[
+  {
+    "name": "udi",
+    "type": "INTEGER",
+    "mode": "REQUIRED",
+    "description": "Unique identifier for each data point"
+  },
+  {
+    "name": "product_id",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Product quality variant — L, M, or H for low, medium, high"
+  },
+  {
+    "name": "type",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Product type — L, M, or H"
+  },
+  {
+    "name": "air_temperature_k",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Air temperature in Kelvin"
+  },
+  {
+    "name": "process_temperature_k",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Process temperature in Kelvin"
+  },
+  {
+    "name": "rotational_speed_rpm",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Rotational speed in RPM"
+  },
+  {
+    "name": "torque_nm",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Torque in Newton metres"
+  },
+  {
+    "name": "tool_wear_min",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Tool wear in minutes"
+  },
+  {
+    "name": "machine_failure",
+    "type": "INTEGER",
+    "mode": "REQUIRED",
+    "description": "Target variable — 1 if machine failed, 0 if not"
+  },
+  {
+    "name": "twf",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Tool wear failure"
+  },
+  {
+    "name": "hdf",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Heat dissipation failure"
+  },
+  {
+    "name": "pwf",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Power failure"
+  },
+  {
+    "name": "osf",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Overstrain failure"
+  },
+  {
+    "name": "rnf",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Random failure"
+  }
+]
