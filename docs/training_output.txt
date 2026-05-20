@@ -1,0 +1,34 @@
+TRAINING RUN — 2026-05-20
+==================================================
+VERTEX AI TRAINING PIPELINE
+==================================================
+Loading data from BigQuery...
+Loaded 10000 rows
+Engineering features...
+Preparing train/test split...
+Train: 8000 rows | Test: 2000 rows
+Train failure rate: 3.4%
+Test failure rate:  3.4%
+Training XGBoost model...
+scale_pos_weight: 28.5
+[0]     validation_0-auc:0.98353
+[50]    validation_0-auc:0.99969
+[100]   validation_0-auc:0.99997
+[150]   validation_0-auc:1.00000
+[200]   validation_0-auc:1.00000
+[250]   validation_0-auc:1.00000
+[299]   validation_0-auc:1.00000
+
+Metrics:
+  auc_roc: 0.9805
+  f1_score: 0.8235
+  precision: 0.8235
+  recall: 0.8235
+
+Confusion Matrix:
+  TN=1920  FP=12
+  FN=12    TP=56
+
+Model URI: gs://vertex-ml-pipeline-496720/models/equipment-failure-classifier/20260520_230607
+Experiment run: xgboost-20260520-230752
+Model resource: projects/1097065788022/locations/us-central1/models/2778791888587587584@1
