@@ -1,6 +1,5 @@
 import os
 import json
-import joblib
 import numpy as np
 from datetime import datetime
 from dotenv import load_dotenv
@@ -155,8 +154,8 @@ def save_model(model, metrics, params):
   os.makedirs(MODEL_DIR, exist_ok=True)
 
   # Save model
-  model_path = os.path.join(MODEL_DIR, MODEL_FILE)
-  joblib.dump(model, model_path)
+  model_path = os.path.join(MODEL_DIR, "model.bst")
+  model.get_booster().save_model(model_path)
   print(f"Model saved to {model_path}")
 
   # Save metadata
@@ -218,7 +217,7 @@ def register_model(gcs_model_uri, metrics):
   model = aiplatform.Model.upload(
     display_name=VERTEX_MODEL_NAME,
     artifact_uri=gcs_model_uri,
-    serving_container_image_uri="us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-4:latest",
+    serving_container_image_uri="us-docker.pkg.dev/vertex-ai/prediction/xgboost-cpu.1-7:latest",
     description=f"XGBoost equipment failure classifier. AUC-ROC: {metrics['auc_roc']}",
   )
 
